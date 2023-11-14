@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Giginator</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" charset="utf-8">
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>My Tickets</h1><br>
+        <div class="ticketdisplay">
+            {% for event in tickets %}
+                {% with ticket_type = "booked" %}
+                    {% include 'ticket.html' %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+
+        {% include 'footer.html' %}
+    </body>
+        
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/header.css" type="text/css" charset="utf-8">
+    <script src='static/js/jquery-3.6.3.min.js'></script>
+    <script src="static/js/main.js"></script>
+  </head>
+  
+  <body>
+    <div class="header">
+      <a href="\" class="logo">Events Planner</a>
+      {% if current_user.is_authenticated %}
+        <div class="text">
+            Welcome, {{current_user.fullname}}
+        </div>
+      {% endif %}
+      <div class="header-right">
+        <a id="home" href="\">Home</a>
+        <a href="browse">Browse</a>
+        {% if current_user.is_authenticated == false %}
+          <a href="loginform">Login</a>
+          <a href="register">Register</a>
+        {% else %}
+          <a href="myevents">My Events</a>
+          <a href="mytickets">My Tickets</a>
+          <a id="logout" href="logout">Log Out</a>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html> 

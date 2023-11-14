@@ -1,0 +1,260 @@
+/*Sets background. Flex display helps position header and footer */
+body{ 
+    min-height: 100vh; 
+    background-image: linear-gradient(rgb(107, 58, 107),rgb(228, 75, 228));
+    display: flex; 
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/*Sets heading attributes. webkit attributes used to give headings an outline */
+h1{
+    text-align: center; 
+    scale: 2;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+/*Used for the main content of the page*/
+.content{
+    border-radius: 50px;
+    background-color: rgb(141, 209, 206);
+    border: 2px solid;
+    margin: 50px;
+    margin-top: auto;
+    padding: 50px;
+    display: flex;
+}
+
+/*Creates a box around paragraphs, used for the main text on a page*/
+.maintext{
+    text-align: center;
+    width: 60%;
+    border: 5px solid rgb(146, 5, 137);
+    border-radius: 10px;
+    padding: 0.5em; 
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+
+/*Sets a box around text without affecting the text attributes*/
+.mainborder{ 
+    width: 60%;
+    border: 5px solid rgb(146, 5, 137);
+    padding: 0.5em; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Attributes for tickets*/
+.ticket{
+    border-radius: 50px;
+    background-image: linear-gradient(rgb(0, 76, 255),rgb(0, 255, 255));
+    border: 2px solid;
+    margin: 39.9px;
+    margin-top: auto;
+    padding: 30px;
+    width: 300px;
+    height: 400px;
+    display: flex;          /*Helps with positioning of child elements of ticket*/
+    flex-direction: column;
+}
+
+/*Attributes for the heading of tickets*/
+.ticketname{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*Attributes for the text values of tickets*/
+.ticketvalue{
+    font-size: 20px
+}
+
+/*Used for positioning of several tickets together on one page*/
+.ticketdisplay{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Text used for danger or alerts*/
+.alert{
+    color: red;
+    font-weight: bold;
+}
+
+/*General styling for most buttons (This is a class because not all buttons use this)*/
+.button{
+    background-color: rgb(0, 184, 0);
+    color: white;
+    border: 2px solid rgb(0, 184, 0);
+    padding: 12px 15px;
+    margin: 0 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Changes appearance of button when hovered over*/
+.button:hover{
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+}
+
+/* "Greys" out buttons that cannot be clicked */
+.unavailable{
+    background-color: rgb(59, 104, 59);
+    border: 2px solid rgb(59, 104, 59);
+    margin-top: auto;
+}
+
+.unavailable:hover{
+    background-color: rgb(59, 104, 59);
+    color:white;
+    cursor:default;
+    border: 2px solid rgb(59, 104, 59);
+}
+
+/*Styling attributes for button that accesses pop-up screen*/
+.popup-button{
+    background-color: rgb(0, 184, 0);
+    color: white;
+    border: 2px solid rgb(0, 184, 0);
+    padding: 14px 20px;
+    margin: 5% auto 0% auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+/*Changes appearance of popup button when hovered over*/
+.popup-button:hover{
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+}
+
+/*Attributes for the popup box: Box appears above page*/
+.popup{
+    background-color: #ffffff;
+    z-index: 2;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #000000;
+    border-radius: 35px;
+    width: 40%; 
+    height: auto;
+    opacity: 1;
+    padding: 100px;
+    animation: animatezoom 0.6s; /*Animation when a screen pops up*/
+}
+
+/*Attributes for the transparent background around popup box*/
+.popup-background{
+    position: fixed;
+    z-index: 1;     /* Sets the box to be above the main page */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /*Allows for scrolling if required*/
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+/*Keyframe animation for zoom effect*/
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+/*Styling for cancel buttons*/
+.cancel {
+    background-color: red;
+    color: white;
+    border: 2px solid black;
+    padding: 12px 15px;
+    margin: 5% auto 15% auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*Reduces opacity when hovering over cancel button*/
+.cancel:hover, .cancel:active {
+    background-color: white;
+    color: black;
+    border: red 2px solid;
+    transition-duration: 0.4s;
+}
+
+
+/*Style for text in forms */
+.formtext{
+    display: block;
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+/*Style for input boxes in forms*/
+.forminput{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: block;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+
+/*Style for submit button in forms*/
+.formsubmit {
+    background-color: #482fd2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+/*Changes style of submit button when hovered over*/
+.formsubmit:hover {
+    opacity: 0.6;
+}
+
+/*Styling for small error text that appears under invalid input boxes*/
+.errortext{
+    color: red;
+    margin-left: 10px;
+}
+
+/*Styling for input boxes when input is invalid: Creates a shaking animation*/
+.error {
+    animation-name: shake;
+    animation-duration: 0.7s;
+}
+
+/*Shaking animation for errors*/
+@keyframes shake {
+    0%, 20%, 40%, 60%, 80% { /*Translates element right every 1/5 of a second*/
+        transform: translateX(8px);
+    }
+    10%,30%,50%,70%,90% { /*Translates element left every 1/5 of a second*/
+        transform: translateX(-8px);
+    }
+}
+

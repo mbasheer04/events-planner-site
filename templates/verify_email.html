@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Giginator</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" charset="utf-8">
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>Verify Email</h1><br>
+        <div class="content">
+            A verification code has been sent to {{session.get('email')}}. Enter the code below.<br>
+            <form action="verify_email" id="verify_email" method="POST">
+                <label for='code' class='formtext'>Verification Code:</label> 
+                <input type='text' name='code' id='code' class='forminput'> 
+                <input class="formsubmit" type="submit" value="Submit">
+            </form>
+        </div><br>
+        {% include 'footer.html' %}
+    </body>
+        
+</html>

@@ -1,0 +1,23 @@
+<body>
+    <div class="ticket">
+        <p class="ticketname">
+            {{event.eventname}}
+        </p>
+        <p class="ticketvalue">
+            Date: {{event.date}}<br>
+            Time: {{event.time}}<br>
+            Duration: {{event.duration}}
+        </p>
+        {% if ticket_type == "available" %}
+            <div class="message alert"></div>
+            <button class="popup-button addticket" id="{{event.eventname}}">Buy Ticket</button>
+        {% elif ticket_type == "booked" %}
+            <button class="popup-button viewticket" id="{{event.eventname}}">View Ticket</button>
+            <button class="popup-button cancel sellticket" id="c{{event.eventname}}">Sell Ticket</button>
+        {% elif ticket_type == "sold" %}
+            <div class="unavailable button">Tickets Sold Out</div>
+        {% elif ticket_type == "manage" %}
+            <div class="popup-button cancel delete-event" id="{{event.eventname}}">Delete Event</div>
+        {% endif %}
+    </div>
+</body>

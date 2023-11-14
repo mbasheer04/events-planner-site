@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Giginator</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" charset="utf-8">
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>My Events</h1><br>
+
+        {% if current_user.isOrganiser %}
+            <div class="content">
+                <button class="popup-button" id="create-event-button">Create Event</button>
+                <button class="popup-button" id="promote-user">Promote User</button>
+            </div>
+        {% endif %}
+
+        <div class="ticketdisplay">
+            {% for event in events %}
+                {% with ticket_type = "manage" %}
+                    {% include 'ticket.html' %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+
+        {% include 'footer.html' %}
+    </body>
+        
+</html>
