@@ -1,5 +1,13 @@
 README:
 
+The giginator is a website for planning and displaying events. Users are able to view upcoming events, as well as purchase and
+store tickets for these events.
+
+To run the website locally, run the setup.sh file or the run.sh file. This will host the website on a local host port,
+and can be accessed through the url http://127.0.0.1:58490/
+
+Below are some detailed features of the website, including some implementation details and internal aspects.
+
 Header: The header contains several link buttons which vary depending on whether the user is logged in. The Home button is
         the main way to reach the home page, and it has a bright blue colour scheme to increase accessibility for colorblind
         users. The logo in the top-left also directs to the home page for convenience. Users can choose to login or
