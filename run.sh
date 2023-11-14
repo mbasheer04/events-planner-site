@@ -16,4 +16,4 @@ source vcwk/bin/activate
 # run Flask for lab1
 echo Running Flask
 # needed python -m flask because flask alone has trouble with spaces in the directory path
-FLASK_APP=$app python -m flask run
+FLASK_APP=$app python3 -m flask run
